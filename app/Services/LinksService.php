@@ -42,7 +42,6 @@ class LinksService
     public static function checkLimitFollow(string $token)
     {
         $link = self::getLink($token);
-        //dd($cacheData);
         if ($link == null) return false;
 
         if ($link->limit == self::$unLimited) {
