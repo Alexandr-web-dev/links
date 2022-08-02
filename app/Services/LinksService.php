@@ -63,7 +63,7 @@ class LinksService
     {
         $link = Link::query()
                 ->where('limit','>', 0)
-                ->orWhere('limit', -1)
+                ->orWhere('limit', self::$unLimited)
                 ->where('token', $token)
                 ->where('expires', '>', Carbon::now()->toDateTime())
                 ->first();
